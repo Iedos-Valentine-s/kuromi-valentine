@@ -38,7 +38,7 @@ A playful, interactive Valentine's Day page featuring Kuromi with a punk-cute ae
 
 5. **Wait ~2 minutes**, then visit:
    ```
-   https://yourusername.github.io/kuromi-valentine
+   https://kroevasuperadmin.github.io/kuromi-valentine
    ```
 
 ---
