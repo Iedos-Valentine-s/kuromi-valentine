@@ -1,14 +1,14 @@
-// Kuromi GIF progression - TEMPORARY PLACEHOLDERS
-// Follow the guide in FIX_GIFS_GUIDE.md to add your own Kuromi GIFs!
+// TEMPORARY EMOJI STAGES - Replace with Kuromi GIF URLs using the guide!
+// Each emoji represents the mood progression
 const kuromiStages = [
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 0 - normal cute
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 1 - confused
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 2 - pleading
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 3 - sad
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 4 - sadder
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 5 - very sad
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 6 - crying
-    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"     // 7 - dramatic escape
+    "💜",      // 0 - normal/happy
+    "💭",      // 1 - thinking/confused
+    "🥺",      // 2 - pleading
+    "😢",      // 3 - sad
+    "😭",      // 4 - sadder
+    "💔",      // 5 - heartbroken
+    "🌧️",     // 6 - crying/stormy
+    "👻"       // 7 - dramatic/ghosted
 ];
 
 const noButtonMessages = [
@@ -35,7 +35,7 @@ let noClickCount = 0;
 let runawayMode = false;
 let soundActive = true;
 
-const kuromiGif = document.getElementById('kuromi-gif');
+let kuromiGif = document.getElementById('kuromi-gif');
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
 const bgMusic = document.getElementById('bg-music');
@@ -128,7 +128,25 @@ function swapKuromiGif(newSrc) {
     kuromiGif.style.transform = 'scale(0.85)';
     
     setTimeout(() => {
-        kuromiGif.src = newSrc;
+        // Check if it's an emoji (no http/https) or an image URL
+        if (newSrc.startsWith('http')) {
+            // It's an image URL - make sure we're using an img tag
+            if (kuromiGif.tagName !== 'IMG') {
+                const img = document.createElement('img');
+                img.id = 'kuromi-gif';
+                img.alt = 'kuromi';
+                kuromiGif.parentNode.replaceChild(img, kuromiGif);
+                kuromiGif = img; // Update reference
+            }
+            kuromiGif.src = newSrc;
+        } else {
+            // It's an emoji - just set the text content
+            kuromiGif.textContent = newSrc;
+            if (!kuromiGif.classList.contains('emoji-placeholder')) {
+                kuromiGif.classList.add('emoji-placeholder');
+            }
+        }
+        
         kuromiGif.style.opacity = '1';
         kuromiGif.style.transform = 'scale(1)';
     }, 250);
@@ -140,17 +158,21 @@ function activateRunaway() {
 }
 
 function dodgeButton() {
-    const buffer = 25;
+    const buffer = 30; // Increased buffer to keep button more visible
     const btnWidth = noBtn.offsetWidth;
     const btnHeight = noBtn.offsetHeight;
+    
+    // Calculate safe zone to keep button fully visible
     const maxX = window.innerWidth - btnWidth - buffer;
     const maxY = window.innerHeight - btnHeight - buffer;
 
-    const randomX = Math.random() * maxX + buffer / 2;
-    const randomY = Math.random() * maxY + buffer / 2;
+    // Generate random position within safe bounds
+    const randomX = Math.random() * (maxX - buffer) + buffer;
+    const randomY = Math.random() * (maxY - buffer) + buffer;
 
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
     noBtn.style.zIndex = '999';
+    noBtn.style.transform = 'none'; // Reset any transforms that might affect positioning
 }

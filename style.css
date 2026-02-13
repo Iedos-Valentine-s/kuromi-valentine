@@ -162,6 +162,19 @@ body {
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
+/* Emoji placeholder styling */
+.emoji-placeholder {
+    font-size: 180px;
+    line-height: 1;
+    text-align: center;
+    animation: floatEmoji 3s ease-in-out infinite;
+}
+
+@keyframes floatEmoji {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
 /* Button area */
 .button-zone {
     display: flex;
@@ -409,6 +422,10 @@ body {
         width: 250px;
         height: 250px;
     }
+    
+    .emoji-placeholder {
+        font-size: 200px;
+    }
 }
 
 /* Standard laptops (992px - 1199px) */
@@ -448,9 +465,17 @@ body {
         height: 200px;
     }
     
+    .emoji-placeholder {
+        font-size: 160px;
+    }
+    
     .celebration-size #kuromi-gif {
         width: 240px;
         height: 240px;
+    }
+    
+    .celebration-size .emoji-placeholder {
+        font-size: 200px;
     }
     
     #yes-btn {
@@ -530,9 +555,17 @@ body {
         height: 160px;
     }
     
+    .emoji-placeholder {
+        font-size: 120px;
+    }
+    
     .celebration-size #kuromi-gif {
         width: 200px;
         height: 200px;
+    }
+    
+    .celebration-size .emoji-placeholder {
+        font-size: 160px;
     }
     
     .button-zone {
