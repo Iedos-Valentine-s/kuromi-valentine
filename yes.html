@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yay! 💕💀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="floating-elements celebration"></div>
+
+    <div class="main-card celebration-card">
+        <div class="star-burst">✨</div>
+        
+        <h1 class="celebration-title">
+            <span class="word">I</span>
+            <span class="word">Knew</span>
+            <span class="word">It!</span>
+        </h1>
+
+        <div class="kuromi-container celebration-size">
+            <img id="kuromi-gif" src="https://media.tenor.com/k9x9yT2o-nkAAAAi/kuromi-heart.gif" alt="kuromi celebrating">
+        </div>
+
+        <p class="love-message">
+            You just made my day! 💕
+            <br>
+            <span class="sub-message">Kuromi approves of this decision 😈</span>
+        </p>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="music/beabadoobee - Glue Song (Lyrics).mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="sound-control" onclick="toggleSound()" title="Toggle music">
+        <span class="sound-icon">🎵</span>
+    </button>
+
+    <script src="yes-script.js"></script>
+</body>
+</html>

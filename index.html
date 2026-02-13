@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💀💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-elements"></div>
+
+    <div class="main-card">
+        <div class="skull-accent skull-left">💀</div>
+        <div class="skull-accent skull-right">💀</div>
+        
+        <h1 class="question-title">
+            <span class="word">Will</span>
+            <span class="word">You</span>
+            <span class="word">Be</span>
+            <span class="word">My</span>
+            <span class="word">Valentine?</span>
+        </h1>
+
+        <div class="kuromi-container">
+            <img id="kuromi-gif" src="https://media.tenor.com/1oi-WpkusIEAAAAi/kuromi.gif" alt="kuromi">
+        </div>
+
+        <div class="button-zone">
+            <button id="yes-btn" onclick="handleYesClick()">
+                <span class="btn-text">Yes!</span>
+                <span class="btn-shine"></span>
+            </button>
+            <button id="no-btn" onclick="handleNoClick()">No</button>
+        </div>
+        
+        <div id="tease-message"></div>
+    </div>
+
+    <audio id="bg-music" loop autoplay muted>
+        <source src="music/beabadoobee - Glue Song (Lyrics).mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="sound-control" onclick="toggleSound()" title="Toggle music">
+        <span class="sound-icon">🎵</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
