@@ -393,9 +393,82 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+
+/* Large laptops and desktops (1200px+) */
+@media (min-width: 1200px) {
     .main-card {
-        padding: 40px 25px;
+        max-width: 560px;
+        padding: 60px 50px;
+    }
+    
+    .question-title {
+        font-size: 2.8rem;
+    }
+    
+    #kuromi-gif {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Standard laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .main-card {
+        max-width: 520px;
+        padding: 50px 40px;
+    }
+    
+    .question-title {
+        font-size: 2.5rem;
+    }
+    
+    #kuromi-gif {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Tablets (768px - 991px) - iPad */
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-card {
+        max-width: 480px;
+        padding: 45px 35px;
+    }
+    
+    .question-title {
+        font-size: 2.2rem;
+    }
+    
+    .celebration-title {
+        font-size: 2.6rem;
+    }
+    
+    #kuromi-gif {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .celebration-size #kuromi-gif {
+        width: 240px;
+        height: 240px;
+    }
+    
+    #yes-btn {
+        font-size: 1.4rem;
+        padding: 16px 42px;
+    }
+    
+    #no-btn {
+        font-size: 1rem;
+        padding: 11px 28px;
+    }
+}
+
+/* Small tablets and large phones (601px - 767px) */
+@media (min-width: 601px) and (max-width: 767px) {
+    .main-card {
+        max-width: 440px;
+        padding: 40px 30px;
     }
     
     .question-title {
@@ -403,7 +476,7 @@ body {
     }
     
     .celebration-title {
-        font-size: 2.3rem;
+        font-size: 2.4rem;
     }
     
     #kuromi-gif {
@@ -414,5 +487,146 @@ body {
     .celebration-size #kuromi-gif {
         width: 220px;
         height: 220px;
+    }
+    
+    #yes-btn {
+        font-size: 1.3rem;
+        padding: 15px 38px;
+    }
+    
+    #no-btn {
+        font-size: 0.95rem;
+        padding: 10px 25px;
+    }
+    
+    .skull-accent {
+        font-size: 2rem;
+    }
+}
+
+/* Phones (up to 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+    
+    .main-card {
+        padding: 35px 25px;
+        max-width: 100%;
+        border-radius: 24px;
+    }
+    
+    .question-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .celebration-title {
+        font-size: 2rem;
+    }
+    
+    #kuromi-gif {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .celebration-size #kuromi-gif {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .button-zone {
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
+    #yes-btn {
+        font-size: 1.2rem;
+        padding: 14px 35px;
+    }
+    
+    #no-btn {
+        font-size: 0.9rem;
+        padding: 10px 24px;
+    }
+    
+    .skull-accent {
+        font-size: 1.8rem;
+    }
+    
+    .skull-left {
+        top: -12px;
+        left: 15px;
+    }
+    
+    .skull-right {
+        top: -12px;
+        right: 15px;
+    }
+    
+    #sound-control {
+        width: 52px;
+        height: 52px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.4rem;
+    }
+    
+    .love-message {
+        font-size: 1.3rem;
+        margin-top: 25px;
+    }
+    
+    .sub-message {
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+    
+    .star-burst {
+        font-size: 3rem;
+        top: -18px;
+    }
+}
+
+/* Very small phones (up to 380px) */
+@media (max-width: 380px) {
+    .main-card {
+        padding: 30px 20px;
+    }
+    
+    .question-title {
+        font-size: 1.6rem;
+    }
+    
+    .celebration-title {
+        font-size: 1.8rem;
+    }
+    
+    #kuromi-gif {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .celebration-size #kuromi-gif {
+        width: 180px;
+        height: 180px;
+    }
+    
+    #yes-btn {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+    }
+    
+    #no-btn {
+        font-size: 0.85rem;
+        padding: 9px 22px;
+    }
+    
+    .love-message {
+        font-size: 1.2rem;
+    }
+    
+    .sub-message {
+        font-size: 0.95rem;
     }
 }

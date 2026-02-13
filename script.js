@@ -1,13 +1,14 @@
-// Kuromi GIF progression - from cute to increasingly sad/dramatic
+// Kuromi GIF progression - TEMPORARY PLACEHOLDERS
+// Follow the guide in FIX_GIFS_GUIDE.md to add your own Kuromi GIFs!
 const kuromiStages = [
-    "https://media.tenor.com/1oi-WpkusIEAAAAi/kuromi.gif",              // 0 - normal cute
-    "https://media.tenor.com/xaVAJP9z5aAAAAAi/kuromi.gif",              // 1 - confused
-    "https://media.tenor.com/nzU70VgYZckAAAAi/kuromi-sanrio.gif",       // 2 - pleading
-    "https://media.tenor.com/VvP-_hN8KyMAAAAi/kuromi.gif",              // 3 - sad
-    "https://media.tenor.com/8GnGQJGz94AAAAAi/kuromi-sad.gif",         // 4 - sadder
-    "https://media.tenor.com/2qV3epCm-_8AAAAi/kuromi.gif",             // 5 - very sad
-    "https://media.tenor.com/pafmM-QJ_nIAAAAi/kuromi.gif",             // 6 - crying
-    "https://media.tenor.com/E9kZSqTbqGwAAAAi/kuromi-angry.gif"        // 7 - dramatic escape
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 0 - normal cute
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 1 - confused
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 2 - pleading
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 3 - sad
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 4 - sadder
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 5 - very sad
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",    // 6 - crying
+    "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"     // 7 - dramatic escape
 ];
 
 const noButtonMessages = [
