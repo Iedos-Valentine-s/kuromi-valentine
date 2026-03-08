@@ -1,14 +1,13 @@
-// TEMPORARY EMOJI STAGES - Replace with Kuromi GIF URLs using the guide!
-// Each emoji represents the mood progression
+// KUROMI GIF STAGES - Your personally selected GIFs! 💜
 const kuromiStages = [
-    "💜",      // 0 - normal/happy
-    "💭",      // 1 - thinking/confused
-    "🥺",      // 2 - pleading
-    "😢",      // 3 - sad
-    "😭",      // 4 - sadder
-    "💔",      // 5 - heartbroken
-    "🌧️",     // 6 - crying/stormy
-    "👻"       // 7 - dramatic/ghosted
+    "https://media.tenor.com/xs51GcF_uGwAAAAj/kuromi-happy.gif",                    // 0 - Happy dancing
+    "https://media.tenor.com/j-dmw7QFccEAAAAj/kuromi-sanrio.gif",                   // 1 - Confused "Huh?"
+    "https://media.tenor.com/dxjj4tP3gnwAAAAj/kuromi-sanrio.gif",                   // 2 - Pleading
+    "https://media.tenor.com/X6BcoMu9g4EAAAAj/hello-kitty-emojis.gif",              // 3 - Getting sad
+    "https://media.tenor.com/qgPkMbjb1UoAAAAj/kuromi-sad.gif",                      // 4 - Sadder/depressed
+    "https://media.tenor.com/DDfj8qPa-ZgAAAAj/kuromi-crying.gif",                   // 5 - Crying with tears
+    "https://media.tenor.com/nTIAOWOb_KMAAAAj/kuromi-nooo.gif",                     // 6 - Dramatic "NOOO"
+    "https://media.tenor.com/n1qutFy0LAUAAAAM/sanrio-kuromi.gif"                    // 7 - Hmph/dismissive
 ];
 
 const noButtonMessages = [
@@ -68,14 +67,15 @@ function toggleSound() {
 }
 
 function handleYesClick() {
-    if (!runawayMode) {
+    // Yes button only works after they've clicked No at least 7 times
+    if (noClickCount < 7) {
         // Tease them to click No first
         const teaseMsg = yesTeaseMessages[Math.min(yesTeaseCount, yesTeaseMessages.length - 1)];
         yesTeaseCount++;
         displayTeaseMessage(teaseMsg);
         return;
     }
-    // They've clicked No enough times, let them proceed
+    // They've clicked No 7+ times, let them proceed!
     window.location.href = 'yes.html';
 }
 
@@ -128,25 +128,7 @@ function swapKuromiGif(newSrc) {
     kuromiGif.style.transform = 'scale(0.85)';
     
     setTimeout(() => {
-        // Check if it's an emoji (no http/https) or an image URL
-        if (newSrc.startsWith('http')) {
-            // It's an image URL - make sure we're using an img tag
-            if (kuromiGif.tagName !== 'IMG') {
-                const img = document.createElement('img');
-                img.id = 'kuromi-gif';
-                img.alt = 'kuromi';
-                kuromiGif.parentNode.replaceChild(img, kuromiGif);
-                kuromiGif = img; // Update reference
-            }
-            kuromiGif.src = newSrc;
-        } else {
-            // It's an emoji - just set the text content
-            kuromiGif.textContent = newSrc;
-            if (!kuromiGif.classList.contains('emoji-placeholder')) {
-                kuromiGif.classList.add('emoji-placeholder');
-            }
-        }
-        
+        kuromiGif.src = newSrc;
         kuromiGif.style.opacity = '1';
         kuromiGif.style.transform = 'scale(1)';
     }, 250);
